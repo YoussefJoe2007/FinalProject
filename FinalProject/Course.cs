@@ -8,6 +8,7 @@ namespace FinalProject
 {
     public class Course
     {
+        //course 
         public int courseid {  get; set; }
         public string coursetitle { get; set; }
         public string coursedescription { get; set; }
