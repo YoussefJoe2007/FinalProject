@@ -8,6 +8,7 @@ namespace FinalProject
 {
     public class User
     {
+        //user
         public int userid { get; set; }
         public string username { get; set; }
         public string userpassword { get; set; }
