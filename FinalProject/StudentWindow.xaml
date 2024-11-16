@@ -1,0 +1,56 @@
+﻿<Window x:Class="FinalProject.StudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="StudentWindow" Height="500" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="116,254,0,88" Grid.Row="1">
+            <Button Content="Back" Width="75" Margin="5" Click="BackButton_Click"/>
+            <Button Content="Logout" Width="75" Margin="5" Click="LogoutButton_Click"/>
+        </StackPanel>
+
+        <TextBlock Text="Student Name" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" 
+                   Grid.Row="0" Grid.ColumnSpan="2" Margin="0,10,0,20"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,10,0">
+            <TextBlock Text="Pending/ In Progress" FontSize="14" FontWeight="Bold" Background="LightGray" Padding="5" />
+
+            <DataGrid x:Name="Grid1"  Margin="0,5,0,20" Height="130">
+            </DataGrid>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="CourseId:" VerticalAlignment="Center" Margin="0,0,5,0" />
+                <TextBox Width="50" x:Name="TaskIdTextBox" />
+
+                <TextBlock Text="AssignmentStatus:" VerticalAlignment="Center" Margin="50,0,5,0" />
+                <ComboBox x:Name="StatusComboBox" Width="100">
+                    <ComboBoxItem Content="Uncompleted" />
+                    <ComboBoxItem Content="In progress" />
+                    <ComboBoxItem Content="Completed" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <Button Content="Done" Width="60" Margin="1,0,0,0" Click="DoneButton_Click" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,0,0,0">
+            <TextBlock Text="Completed" FontSize="14" FontWeight="Bold" Background="LightGray" Padding="5" />
+
+            <DataGrid x:Name="Grid2"  Margin="0,5,0,0" Height="150">
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

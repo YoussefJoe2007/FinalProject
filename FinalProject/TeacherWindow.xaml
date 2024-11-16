@@ -1,0 +1,53 @@
+﻿<Window x:Class="FinalProject.TeacherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="TeacherWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="10" Orientation="Vertical" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="CourseId:" VerticalAlignment="Center" Width="100"/>
+                <TextBox x:Name="CourseId" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Content="Course Title:" VerticalAlignment="Center" Width="100"/>
+                <TextBox x:Name="Title" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Content="Description:" VerticalAlignment="Center" Width="100"/>
+                <TextBox x:Name="Description" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Content="Status:" VerticalAlignment="Center" Width="100"/>
+                <ComboBox x:Name="Status" Width="200">
+                    <ComboBoxItem Content="UnCompleted"/>
+                    <ComboBoxItem Content="In Progress"/>
+                    <ComboBoxItem Content="Completed"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <Button Name="AddButton" Content="Add" Width="75" Margin="5" Click="AddButton_Click"/>
+            <Button Name="DeleteButton" Content="Delete" Width="75" Margin="5" Click="DeleteButton_Click"/>
+            <Button Name="UpdateButton" Content="Update" Width="75" Margin="5" Click="UpdateButton_Click"/>
+            <Button Name="BackButton" Content="Back" Width="75" Margin="5" Click="BackButton_Click"/>
+            <Button Name="LogoutButton" Content="Logout" Width="75" Margin="5" Click="LogoutButton_Click"/>
+        </StackPanel>
+
+        <DataGrid Name="CoursesDataGrid" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  Margin="10" AutoGenerateColumns="True"/>
+    </Grid>
+</Window>
